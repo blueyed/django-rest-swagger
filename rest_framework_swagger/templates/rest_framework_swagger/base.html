@@ -94,7 +94,7 @@
                 {% endif %}
 
                 {# Add version to Accept header, if AcceptHeaderVersioning is used. #}
-                {% if swagger_settings.api_version and rest_framework_settings.DEFAULT_VERSIONING_CLASS == 'rest_framework.versioning.AcceptHeaderVersioning' %}
+                {% if swagger_settings.api_version %}
                     window.authorizations.add('version', {
                         apply: function(obj, authorizations) {
                             $.each(obj.headers, function(k, v) {
